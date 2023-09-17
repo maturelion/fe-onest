@@ -18,8 +18,8 @@ const router = createBrowserRouter([
     errorElement: <ErrorBoundary />,
     children: [
       { index: true, path: "/", Component: Home },
-      { path: "ads/:state/:city", Component: Listings },
-      { path: "ads/:state/:city/:id", Component: Details },
+      { path: "ads/:country/:state/:city", Component: Listings },
+      { path: "ads/:country/:state/:city/:id", Component: Details },
       { path: "auth/login", Component: Login },
       {
         path: "auth/register",

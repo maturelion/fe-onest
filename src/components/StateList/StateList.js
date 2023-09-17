@@ -1,19 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import CityList from "../CityList/CityList";
-import jsonData from "../../statesData.json";
 import { GeoUnit, StateListName, StateListStyle } from "./StateList.styled";
 
-const StateList = () => {
-  const [stateData] = useState(jsonData);
+const StateList = ({countryData}) => {
 
   return (
     <StateListStyle>
-      {stateData.states.map((state, index) => (
-        <GeoUnit key={index}>
-          <StateListName>{state.name}</StateListName>
-          <CityList cities={state.cities} state={state.name} />
-        </GeoUnit>
-      ))}
+      
+          {countryData.states.map((state, stateIndex) => (
+            <GeoUnit key={stateIndex}>
+              <StateListName>{state.name}</StateListName>
+              <CityList
+                cities={state.cities}
+                state={state.name}
+                country={countryData.country_name}
+              />
+            </GeoUnit>
+          ))}
     </StateListStyle>
   );
 };
