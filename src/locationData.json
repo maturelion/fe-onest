@@ -1,6 +1,6 @@
 [
   {
-    "country_name": "United States",
+    "country": { "name": "United States" },
     "states": [
       {
         "name": "Alabama",
@@ -422,9 +422,9 @@
         "cities": [
           "Albany",
           "Alpharetta",
-          "Athens-Clarke County",
+          "Athens",
           "Atlanta",
-          "Augusta-Richmond County",
+          "Augusta",
           "Columbus",
           "Dunwoody",
           "Johns Creek",
@@ -578,8 +578,8 @@
         "cities": [
           "Bowling Green",
           "Covington",
-          "Lexington-Fayette",
-          "Louisville/Jefferson County",
+          "Lexington",
+          "Louisville",
           "Owensboro"
         ]
       },
@@ -1009,7 +1009,7 @@
           "Knoxville",
           "Memphis",
           "Murfreesboro",
-          "Nashville-Davidson",
+          "Nashville",
           "Smyrna"
         ]
       },
@@ -1215,19 +1215,6 @@
       {
         "name": "Wyoming",
         "cities": ["Casper", "Cheyenne"]
-      }
-    ]
-  },
-  {
-    "country_name": "United Kingdom",
-    "states": [
-      {
-        "name": "London",
-        "cities": ["Auburn"]
-      },
-      {
-        "name": "Birmingham",
-        "cities": ["Anchorage"]
       }
     ]
   }

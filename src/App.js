@@ -9,8 +9,8 @@ import { GlobalStyle } from "./theme/GlobalStyle.styled";
 import useLocalStorage from "./hooks/useLocalStorage";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
-import Listings from "./pages/Listings/Listings";
-import Details from "./pages/Details/Details";
+import AdListings from "./pages/AdListings/AdListings";
+import Details from "./pages/AdDetail/AdDetail";
 
 const router = createBrowserRouter([
   {
@@ -18,7 +18,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorBoundary />,
     children: [
       { index: true, path: "/", Component: Home },
-      { path: "ads/:country/:state/:city", Component: Listings },
+      { path: "ads/:country/:state/:city", Component: AdListings },
       { path: "ads/:country/:state/:city/:id", Component: Details },
       { path: "auth/login", Component: Login },
       {

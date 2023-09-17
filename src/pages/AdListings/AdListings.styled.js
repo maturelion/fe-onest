@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export const ListingsStyle = styled.div``;
+export const AdListingsStyle = styled.div``;
 
 export const AdListLink = styled(Link)`
   display: flex;

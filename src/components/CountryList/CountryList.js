@@ -1,17 +1,17 @@
 import React, { useState } from "react";
-import jsonData from "../../statesData.json";
+import jsonData from "../../locationData.json";
 import { CountryH2, CountryListStyle } from "./CountryList.styled";
 import StateList from "../StateList/StateList";
 
 const CountryList = () => {
-  const [locationData] = useState(jsonData);
+  const [locationDatas] = useState(jsonData);
   return (
     <CountryListStyle>
-      {locationData.map((countryData, countryIndex) => (
-        <>
-          <CountryH2 key={countryIndex}>{countryData.country_name}</CountryH2>
-          <StateList countryData={countryData} />
-        </>
+      {locationDatas.map((locationData, countryIndex) => (
+        <React.Fragment key={countryIndex}>
+          <CountryH2 key={countryIndex}>{locationData.country.name}</CountryH2>
+          <StateList locationData={locationData} />
+        </React.Fragment>
       ))}
     </CountryListStyle>
   );
