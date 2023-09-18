@@ -6,7 +6,7 @@ export const StateListStyle = styled.div`
   font-size: 14px;
   text-align: left;
   
-  @media only screen and (min-width: 425px) {
+  @media only screen and (min-width: 767px) {
     column-count: 3;
   }
 `;

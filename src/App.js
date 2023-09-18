@@ -7,10 +7,10 @@ import { ThemeProvider } from "styled-components";
 import theme from "./theme/Theme";
 import { GlobalStyle } from "./theme/GlobalStyle.styled";
 import useLocalStorage from "./hooks/useLocalStorage";
-import Login from "./pages/Login/Login";
-import Register from "./pages/Register/Register";
 import AdListings from "./pages/AdListings/AdListings";
 import Details from "./pages/AdDetail/AdDetail";
+import Login from "./pages/Auth/Login/Login";
+import Register from "./pages/Auth/Register/Register";
 
 const router = createBrowserRouter([
   {
