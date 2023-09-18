@@ -18,7 +18,7 @@ export const AdListLi = styled.li`
 `;
 
 export const Blinker = styled.span`
-    margin-inline-start: 20px;
+  margin-inline-start: 20px;
   animation: blinker 1s linear infinite;
 
   @keyframes blinker {
