@@ -9,7 +9,7 @@ export const getAds = createAsyncThunk(
     try {
       const config = {
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
+          // Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       };
       const res = await axios.get(

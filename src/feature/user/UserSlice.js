@@ -6,7 +6,6 @@ const initialState = {
   loading: false,
   user: {},
   error: null,
-  tatal_downline: [],
 };
 
 const userSlice = createSlice({

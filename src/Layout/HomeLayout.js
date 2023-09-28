@@ -2,7 +2,7 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import Navigation from "../components/Navigation/Navigation";
 
-const Home = () => {
+const HomeLayout = () => {
   return (
     <>
     <Navigation />
@@ -11,4 +11,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomeLayout;
