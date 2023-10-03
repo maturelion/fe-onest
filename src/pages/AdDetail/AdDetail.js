@@ -14,6 +14,10 @@ const AdDetail = () => {
     <AdDetailStyle>
       <h4>{ad.title}</h4>
       <div>{ad.description}</div>
+      {ad.photos_set.map((photo) => (
+        <img key={photo.id} src={photo.image} alt={photo.id} />
+      ))}
+      <div>Views: {ad.views}</div>
     </AdDetailStyle>
   );
 };
