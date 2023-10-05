@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { NavigationStyle } from "./Navigation.styled";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Button from "../Button/Button";
 
 const Navigation = () => {
+  const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(null);
+
   useEffect(() => {
     setIsLoggedIn(localStorage.getItem("token") !== null);
   }, []);
+
   return (
     <NavigationStyle>
       <div>
@@ -34,6 +37,7 @@ const Navigation = () => {
                 display: "flex",
                 justifyContent: "space-evenly",
               }}
+              onClick={() => navigate("create-ads")}
             >
               <svg
                 width="24"

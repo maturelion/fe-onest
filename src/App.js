@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import HomeLayout from "./Layout/HomeLayout";
 import Home from "./pages/Home/Home";
@@ -14,6 +14,9 @@ import Register from "./pages/Auth/Register/Register";
 import AuthLayout from "./Layout/AuthLayout";
 import Account from "./pages/Account/Account";
 import Nav from "./pages/Account/Nav";
+import { useDispatch } from "react-redux";
+import { getUser } from "./feature/user/UserActions";
+import CreateAds from "./pages/CreateAds/CreateAds";
 
 const router = createBrowserRouter([
   {
@@ -33,7 +36,10 @@ const router = createBrowserRouter([
       </>
     ),
     errorElement: <ErrorBoundary />,
-    children: [{ index: true, path: "/account", Component: Account }],
+    children: [
+      { index: true, path: "/account", Component: Account },
+      { path: "create-ads/", Component: CreateAds },
+    ],
   },
   {
     Component: AuthLayout,
@@ -50,6 +56,12 @@ const router = createBrowserRouter([
 
 function App() {
   const [currentTheme] = useLocalStorage("theme", "light");
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getUser({}));
+  }, [dispatch]);
+
   return (
     <ThemeProvider theme={theme[currentTheme]}>
       <GlobalStyle />

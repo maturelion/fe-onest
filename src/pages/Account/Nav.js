@@ -37,6 +37,10 @@ const Nav = () => {
             display: "flex",
             justifyContent: "space-evenly",
           }}
+          onClick={() => {
+            setShowNav(!showNav);
+            navigate("create-ads");
+          }}
         >
           <svg
             width="24"
@@ -117,6 +121,7 @@ const SideNav = styled.div`
   height: 100vh;
   background-color: #fff;
   border-right: 1px solid grey;
+  z-index: 2;
 `;
 
 const SideNavUl = styled.ul`
