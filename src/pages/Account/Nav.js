@@ -77,7 +77,7 @@ const Nav = () => {
             <Link to="/">Home</Link>
           </SideNavLi>
           <SideNavLi>
-            <Link to="buy-credit">Buy Credit</Link>
+            <Link to="buy-credits">Buy Credit</Link>
           </SideNavLi>
           <SideNavLi>
             <Link to="/change/password">Change Password</Link>
