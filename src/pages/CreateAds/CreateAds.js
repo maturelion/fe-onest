@@ -20,6 +20,7 @@ import * as Yup from "yup";
 import { createClassifieds } from "../../feature/classified/ClassifiedActions";
 import { useNavigate } from "react-router-dom";
 import FormError from "../../components/FormError/FormError";
+import { getWallet } from "../../feature/wallet/WalletActions";
 
 const CreateAds = () => {
   const dispatch = useDispatch();
@@ -39,6 +40,7 @@ const CreateAds = () => {
     cities,
     getCitiesLoading,
   } = useSelector((state) => state.location);
+  const { wallet } = useSelector((state) => state.wallet);
 
   const { createClassifiedsLoading, createClassifiedsError } = useSelector(
     (state) => state.userClassified
@@ -87,6 +89,10 @@ const CreateAds = () => {
   useEffect(() => {
     dispatch(getCountries({}));
   }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(getWallet({ user }));
+  }, [dispatch, user]);
 
   return (
     <CreateAdsStyle>
@@ -201,7 +207,10 @@ const CreateAds = () => {
           ) : null}
         </FormWrapper>
         <div>Order price: {totalPrice}</div>
-        <Button type="submit">
+        {wallet.balance < totalPrice && (
+          <div style={{ color: "tomato" }}>Insufficient balance</div>
+        )}
+        <Button type="submit" disabled={wallet.balance < totalPrice}>
           {createClassifiedsLoading ? "Creating..." : "Submit"}
         </Button>
       </CreateAdsForm>

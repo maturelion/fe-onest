@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
-export const AccountStyle = styled.div``;
+export const AccountStyle = styled.div`
+  margin-inline: 20px;
+  margin-top: 20px;
+`;
 
 export const AccountStyleTable = styled.table`
   width: 100%;

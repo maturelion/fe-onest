@@ -4,6 +4,7 @@ import authReducer from "../pages/Auth/auth/AuthSlice";
 import locationReducer from "../feature/location/LocationSlice";
 import userReducer from "../feature/user/UserSlice";
 import userClassifiedsReducer from "../feature/classified/ClassifiedSlice";
+import walletReducer from "../feature/wallet/WalletSlice";
 
 export const store = configureStore({
   reducer: {
@@ -12,5 +13,6 @@ export const store = configureStore({
     userClassified: userClassifiedsReducer,
     adListings: adsReducer,
     location: locationReducer,
+    wallet: walletReducer,
   },
 });

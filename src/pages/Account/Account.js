@@ -3,11 +3,14 @@ import { AccountStyle, AccountStyleTable } from "./Account.styled";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserClassifieds } from "../../feature/classified/ClassifiedActions";
 import Button from "../../components/Button/Button";
+import { getWallet } from "../../feature/wallet/WalletActions";
+import { Link } from "react-router-dom";
 
 const Account = () => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.user);
   const { userClassifieds } = useSelector((state) => state.userClassified);
+  const { wallet } = useSelector((state) => state.wallet);
 
   const dataPerPage = 33;
   const [nextPage, setNextPage] = useState(dataPerPage);
@@ -16,9 +19,18 @@ const Account = () => {
     dispatch(getUserClassifieds({ user }));
   }, [dispatch, user]);
 
+  useEffect(() => {
+    dispatch(getWallet({ user }));
+  }, [dispatch, user]);
+
   return (
     <AccountStyle>
-      total ads: {userClassifieds.length}
+      User ID:{" "}
+      <span style={{ color: "#05BE71" }}>{user.id?.split("-")[0]}</span> | Total
+      ads: <span style={{ color: "#05BE71" }}>{userClassifieds.length}</span> |
+      Balance: <span style={{ color: "#05BE71" }}>{wallet.balance}</span> |{" "}
+      <Link to="/buy-credit">Buy credits</Link> |{" "}
+      <Link to="/expenses">Expenses records</Link>
       <div style={{ overflowX: "scroll" }}>
         <AccountStyleTable>
           <thead>
