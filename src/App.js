@@ -17,6 +17,8 @@ import Nav from "./pages/Account/Nav";
 import { useDispatch } from "react-redux";
 import { getUser } from "./feature/user/UserActions";
 import CreateAds from "./pages/CreateAds/CreateAds";
+import Deposit from "./pages/Deposit/Deposit";
+import Expenses from "./pages/Expenses/Expenses";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +41,8 @@ const router = createBrowserRouter([
     children: [
       { index: true, path: "/account", Component: Account },
       { path: "create-ads/", Component: CreateAds },
+      { path: "buy-credits/", Component: Deposit },
+      { path: "expenses/", Component: Expenses },
     ],
   },
   {
