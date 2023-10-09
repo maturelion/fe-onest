@@ -5,6 +5,7 @@ import locationReducer from "../feature/location/LocationSlice";
 import userReducer from "../feature/user/UserSlice";
 import userClassifiedsReducer from "../feature/classified/ClassifiedSlice";
 import walletReducer from "../feature/wallet/WalletSlice";
+import depositReducer from "../pages/Deposit/services/DepositSlice";
 
 export const store = configureStore({
   reducer: {
@@ -14,5 +15,6 @@ export const store = configureStore({
     adListings: adsReducer,
     location: locationReducer,
     wallet: walletReducer,
+    deposit: depositReducer,
   },
 });

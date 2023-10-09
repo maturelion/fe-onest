@@ -28,7 +28,8 @@ const Account = () => {
       User ID:{" "}
       <span style={{ color: "#047445" }}>{user.id?.split("-")[0]}</span> | Total
       ads: <span style={{ color: "#047445" }}>{userClassifieds.length}</span> |
-      Balance: <span style={{ color: "#047445" }}>{wallet.balance}</span> |{" "}
+      Balance:{" "}
+      <span style={{ color: "#047445" }}>{wallet.balance.toFixed(2)}</span> |{" "}
       <Link to="/buy-credits">Buy credits</Link> |{" "}
       <Link to="/expenses">Expenses records</Link>
       <div style={{ overflowX: "scroll" }}>
