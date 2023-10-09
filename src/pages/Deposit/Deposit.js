@@ -44,7 +44,7 @@ const Deposit = () => {
   }, [deposit, dispatch]);
 
   useEffect(() => {
-    if (JSON.parse(localStorage.getItem("deposit")).status === "SUCCESSFUL") {
+    if (JSON.parse(localStorage.getItem("deposit"))?.status === "SUCCESSFUL") {
       navigate("/account");
       localStorage.removeItem("deposit");
     }
